@@ -10,8 +10,13 @@ Because this is a Python3 Program, so first you need install Python3.<br>
 <br>
 And This program requires "rarfile". You can use this command to install this: <br>
 `pip3 install rarfile`
-
+<br>
+## Basic Usage
+**Extract file(s)**: Py-uncompress.py -f file1 file2 ...<br>
+<br>
+To get more up-to-date information, you can use the command: *Py-uncompress.py --version*
+<br>
 ## New Features
-<strong>Add</strong>: Multi-file processing<br>
-<strong>Add</strong>: Extract files to their original paths<br>
-<strong>Fix</strong>: Some bugs
+**Add**: Multi-file processing<br>
+**Add**: Extract files to their original paths<br>
+**Fix**: Some bugs
