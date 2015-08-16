@@ -12,6 +12,6 @@ And This program requires "rarfile". You can use this command to install this: <
 `pip3 install rarfile`
 
 ## New Feature
-Add: Multi-file processing
-Add: Extract files to their original paths
-Fix: Some bugs
+<strong>Add</strong>: Multi-file processing<br>
+<strong>Add</strong>: Extract files to their original paths<br>
+<strong>Fix<strong>: Some bugs
