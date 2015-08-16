@@ -10,3 +10,8 @@ Because this is a Python3 Program, so first you need install Python3.<br>
 <br>
 And This program requires "rarfile". You can use this command to install this: <br>
 `pip3 install rarfile`
+
+## New Feature
+Add: Multi-file processing
+Add: Extract files to their original paths
+Fix: Some bugs
