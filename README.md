@@ -11,7 +11,7 @@ Because this is a Python3 Program, so first you need install Python3.<br>
 And This program requires "rarfile". You can use this command to install this: <br>
 `pip3 install rarfile`
 
-## New Feature
+## New Features
 <strong>Add</strong>: Multi-file processing<br>
 <strong>Add</strong>: Extract files to their original paths<br>
 <strong>Fix</strong>: Some bugs
