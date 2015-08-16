@@ -25,4 +25,4 @@ To get more up-to-date information, you can use the command: *Py-uncompress.py -
 3: Lack of some arguments<br>
 4: Imcomplete success because some files do not exist<br>
 5: Imcomplete success because some files are not supported<br>
-9: Imcomplete success because some files do not exist or are not supported
+6: Imcomplete success because some files do not exist or are not supported
