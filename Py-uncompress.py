@@ -49,6 +49,6 @@ if os.path.isfile(file) == False:
 
 
 try:
-    exec("uncompress."+filetype.filetype_detect(file)+"('"+file+"')"
+    exec("uncompress."+filetype.filetype_detect(file)+"('"+file+"')")
 except:
     print('Error: This type doesn\'t supported.')
