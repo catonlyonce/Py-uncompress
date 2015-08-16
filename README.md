@@ -16,4 +16,13 @@ To get more up-to-date information, you can use the command: *Py-uncompress.py -
 ## New Features
 **Add**: Multi-file processing<br>
 **Add**: Extract files to their original paths(ONLY works on *POSIX-compliant* platform)<br>
-**Fix**: Some bugs
+**Fix**: Some bugs<br>
+<br>
+## Value of process's exit status
+0: Success<br>
+1: Python version is not suitable<br>
+2: No arguments<br>
+3: Lack of some arguments<br>
+4: Imcomplete success because some files do not exist<br>
+5: Imcomplete success because some files are not supported<br>
+9: Imcomplete success because some files do not exist or are not supported
