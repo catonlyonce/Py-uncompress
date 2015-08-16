@@ -43,6 +43,9 @@ except ValueError:
 
 files = sys.argv[select + 1: ]
 
+if os.name == 'posix':
+    uncompress.is_posix = True
+
 for file in files:
     if os.path.isfile(file) == False:
         print('Error: No such file or it is a directory.')
