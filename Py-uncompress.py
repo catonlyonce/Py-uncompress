@@ -13,15 +13,17 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
 # See the License for the specific language governing permissions and 
 # limitations under the License. 
-import os
 import sys
-import howto
-import filetype
-import uncompress
 
 if sys.version_info.major < 3:
     print('Please use Python 3(at least) to run')
     sys.exit(1)
+
+import os
+import howto
+import filetype
+import uncompress
+
         
 if len(sys.argv) == 1:
     howto.help()
