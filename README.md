@@ -8,5 +8,5 @@ A program that can uncompress files use Python3<br>
 ## Installation
 Because this is a Python3 Program, so first you need install Python3.<br>
 <br>
-And This program requires "rarfile". You can use this command to install this:
-"pip3 install rarfile"
+And This program requires "rarfile". You can use this command to install this: <br>
+`pip3 install rarfile`
