@@ -25,10 +25,11 @@ import howto
 import filetype
 import uncompress
 
+return_value = 0
         
 if len(sys.argv) == 1:
     howto.help()
-    sys.exit(1)
+    sys.exit(2)
 
 if sys.argv[1] == '--help':
     howto.help()
@@ -44,7 +45,7 @@ try:
 
 except ValueError:
     print('Error: Missing -f options')
-    sys.exit(1)
+    sys.exit(3)
 
 
 files = sys.argv[select + 1: ]
@@ -55,10 +56,13 @@ if os.name == 'posix':
 for file in files:
     if os.path.isfile(file) == False:
         print('Error: No such file or it is a directory.')
-        sys.exit(1)
+        sys.exit(4)
 
 
     try:
         exec("uncompress."+filetype.filetype_detect(file)+"('"+file+"')")
     except:
         print('Error: The type of the file '+file+' doesn\'t supported.')
+        return_value = 5
+
+sys.exit(return_value)
