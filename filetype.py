@@ -18,16 +18,16 @@ def filetype_detect(file):
     
     try:
         with open(file, 'rb') as dest_file:
-        header = [ x for x in list( dest_file.read(7)) ]
+            header = [ x for x in list( dest_file.read(7)) ]
 
-        for filetype in file_types:
-            if header[ :len( file_types[filetype] )] == file_types[filetype]:
-                return filetype
+            for filetype in file_types:
+                if header[ :len( file_types[filetype] )] == file_types[filetype]:
+                    return filetype
 
-        #file may be tar
-        dest_file.seek(257, 0)
-        if dest_file.read(5) == 'ustar':
-            return 'tar'
+            #file may be tar
+            dest_file.seek(257, 0)
+            if dest_file.read(5) == 'ustar':
+                return 'tar'
     except:
         pass
     
