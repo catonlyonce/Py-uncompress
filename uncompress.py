@@ -17,7 +17,7 @@
 import os
 import sys
 import bz2
-import gzip
+import gzip as gz
 from zipfile import ZipFile
 from tarfile import TarFile
 from rarfile import RarFile
@@ -25,26 +25,24 @@ from rarfile import RarFile
 def zip(file):
     f = ZipFile(file)
     f.extractall()
-    f.close
+    f.close()
     
 def rar(file):
     f = RarFile(file)
     f.extractall()
-    f.close
+    f.close()
 
 def tar(file):
     f = TarFile(file)
     f.extractall()
-    f.close
+    f.close()
 
-def bzip(file):
-    zip_file = open(file, 'rb')
-    plain_file = bz2.open(finish, 'wb')
-
-    zip_file.writelines(plain_file)
+def bzip2(file):
+    with open(file, 'rb') as zip_file:
+        with bz2.open(file+'.finish', 'wb') as plain_file:
+            plain_file.write( zip_file.read(1024) )
 
 def gzip(file):
-    zip_file = open(file, 'rb')
-    plain_file = gzip.open(finish, 'wb')
-
-    zip_file.writelines(plain_file)
+    with open(file, 'rb') as zip_file:
+        with gz.open(file+'.finish', 'wb') as plain_file:
+            plain_file.write( zip_file.read(1024) )
