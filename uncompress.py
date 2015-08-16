@@ -38,8 +38,8 @@ def tar(file):
     f.close()
 
 def bzip2(file):
-    with open(file, 'rb') as zip_file:
-        with bz2.open(file+'.finish', 'wb') as plain_file:
+    with bz2.open(file, 'rb') as zip_file:
+        with open(file+'.finish', 'wb') as plain_file:
             while True:
                 content = zip_file.read(1024)
                 if content != b'':
@@ -48,8 +48,8 @@ def bzip2(file):
                     break
 
 def gzip(file):
-    with open(file, 'rb') as zip_file:
-        with gz.open(file+'.finish', 'wb') as plain_file:
+    with gz.open(file, 'rb') as zip_file:
+        with open(file+'.finish', 'wb') as plain_file:
             while True:
                 content = zip_file.read(1024)
                 if content != b'':
