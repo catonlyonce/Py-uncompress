@@ -52,4 +52,4 @@ for file in files:
     try:
         exec("uncompress."+filetype.filetype_detect(file)+"('"+file+"')")
     except:
-        print('Error: the type of '+file+' doesn\'t supported.')
+        print('Error: The type of the file '+file+' doesn\'t supported.')
