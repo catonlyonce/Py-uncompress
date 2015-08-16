@@ -56,13 +56,18 @@ if os.name == 'posix':
 for file in files:
     if os.path.isfile(file) == False:
         print('Error: No such file or it is a directory.')
-        sys.exit(4)
-
+        if return_value != 0:
+            return_value += 4
+        else:
+            return_value = 4
 
     try:
         exec("uncompress."+filetype.filetype_detect(file)+"('"+file+"')")
     except:
         print('Error: The type of the file '+file+' doesn\'t supported.')
-        return_value = 5
+        if return_value != 0:
+            return_value += 5
+        else:
+            return_value = 5
 
 sys.exit(return_value)
