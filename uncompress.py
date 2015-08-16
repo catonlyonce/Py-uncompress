@@ -21,9 +21,21 @@ import gzip as gz
 from zipfile import ZipFile
 from tarfile import TarFile
 from rarfile import RarFile
+
+is_posix = True
+
 def getpath(file):
-    name_list = file.split('/')
-    return '/'.join( name_list[ :len(name_list)-1] )
+    """\
+    Get file's path, if the platform is not POSIX-compliant then return current working directory's path
+    
+    file: the name of the file which needs to process
+    """
+    
+    if is_posix:
+        name_list = file.split('/')
+        return '/'.join( name_list[ :len(name_list)-1] )
+    else:
+        return '.'
     
 def zip(file):
     f = ZipFile(file)
