@@ -48,15 +48,7 @@ if os.path.isfile(file) == False:
     sys.exit(1)
 
 
-if filetype.filetype_detect(file) == 'tar':
-    uncompress.tar(file)
-elif filetype.filetype_detect(file) == 'rar':
-    uncompress.rar(file)
-elif filetype.filetype_detect(file) == 'zip':
-    uncompress.zip(file)
-elif filetype.filetype_detect(file) == 'gzip':
-    uncompress.gzip(file)
-elif filetype.filetype_detect(file) == 'bzip':
-    uncompress.bzip(file)
-else:
+try:
+    exec("uncompress."+filetype.filetype_detect(file)+"('"+file+"')"
+except:
     print('Error: This type doesn\'t supported.')
