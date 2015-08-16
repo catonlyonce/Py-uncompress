@@ -15,6 +15,7 @@
 # limitations under the License. 
 import sys
 
+#Python version check
 if sys.version_info.major < 3:
     print('Please use Python 3(at least) to run the program.')
     sys.exit(1)
