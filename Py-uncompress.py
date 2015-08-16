@@ -41,14 +41,15 @@ except ValueError:
     sys.exit(1)
 
 
-file = sys.argv[select + 1]
+files = sys.argv[select + 1: ]
 
-if os.path.isfile(file) == False:
-    print('Error: No such file or it is a directory.')
-    sys.exit(1)
+for file in files:
+    if os.path.isfile(file) == False:
+        print('Error: No such file or it is a directory.')
+        sys.exit(1)
 
 
-try:
-    exec("uncompress."+filetype.filetype_detect(file)+"('"+file+"')")
-except:
-    print('Error: This type doesn\'t supported.')
+    try:
+        exec("uncompress."+filetype.filetype_detect(file)+"('"+file+"')")
+    except:
+        print('Error: the type of '+file+' doesn\'t supported.')
