@@ -1,4 +1,4 @@
-![Supported OS](https://img.shields.io/badge/Supported%20OS-Linux-blue.svg)
+![Supported OS](https://img.shields.io/badge/Supported%20OS-All-blue.svg)
 ![Supported Python versions](https://img.shields.io/badge/Python-3.4-brightgreen.svg)
 ![License](https://img.shields.io/hexpm/l/plug.svg)
 # Py-uncompress
