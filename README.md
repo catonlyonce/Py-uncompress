@@ -14,7 +14,7 @@ This program requires "rarfile" module. You can use this command to install: <br
 ## Basic Usage
 **Extract file(s)**: Py-uncompress.py -f file1 file2 ...<br>
 <br>
-To get more up-to-date information, you can use the command: *Py-uncompress.py --version*
+To get more up-to-date information, you can use the command: *Py-uncompress.py --help*
 <br>
 ## New Features
 **Add**: Multi-file processing<br>
