@@ -40,9 +40,19 @@ def tar(file):
 def bzip2(file):
     with open(file, 'rb') as zip_file:
         with bz2.open(file+'.finish', 'wb') as plain_file:
-            plain_file.write( zip_file.read(1024) )
+            while True:
+                content = zip_file.read(1024)
+                if content != b'':
+                    plain_file.write(content)
+                else:
+                    break
 
 def gzip(file):
     with open(file, 'rb') as zip_file:
         with gz.open(file+'.finish', 'wb') as plain_file:
-            plain_file.write( zip_file.read(1024) )
+            while True:
+                content = zip_file.read(1024)
+                if content != b'':
+                    plain_file.write(content)
+                else:
+                    break
