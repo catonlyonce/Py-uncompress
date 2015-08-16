@@ -19,6 +19,9 @@ import howto
 import filetype
 import uncompress
 
+if sys.version_info.major < 3:
+    print('Please use Python 3(at least) to run')
+    sys.exit(1)
         
 if len(sys.argv) == 1:
     howto.help()
