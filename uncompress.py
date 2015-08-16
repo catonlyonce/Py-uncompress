@@ -21,20 +21,23 @@ import gzip as gz
 from zipfile import ZipFile
 from tarfile import TarFile
 from rarfile import RarFile
-
+def getpath(file):
+    name_list = file.split('/')
+    return '/'.join( name_list[ :len(name_list)-1] )
+    
 def zip(file):
     f = ZipFile(file)
-    f.extractall()
+    f.extractall(path = getpath(file))
     f.close()
     
 def rar(file):
     f = RarFile(file)
-    f.extractall()
+    f.extractall(path = getpath(file))
     f.close()
 
 def tar(file):
     f = TarFile(file)
-    f.extractall()
+    f.extractall(path = getpath(file))
     f.close()
 
 def bzip2(file):
