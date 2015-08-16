@@ -1,4 +1,4 @@
-![Supported OS](https://img.shields.io/badge/Supported%20OS-Unix_Like-blue.svg)
+![Supported OS](https://img.shields.io/badge/Supported%20OS-All-blue.svg)
 ![Supported Python versions](https://img.shields.io/badge/Python-3.4-brightgreen.svg)
 ![License](https://img.shields.io/hexpm/l/plug.svg)
 # Py-uncompress
@@ -18,5 +18,5 @@ To get more up-to-date information, you can use the command: *Py-uncompress.py -
 <br>
 ## New Features
 **Add**: Multi-file processing<br>
-**Add**: Extract files to their original paths<br>
+**Add**: Extract files to their original paths(ONLY works on *POSIX-compliant* platform)<br>
 **Fix**: Some bugs
