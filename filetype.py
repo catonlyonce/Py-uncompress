@@ -26,7 +26,7 @@ def filetype_detect(file):
 
             #file may be tar
             dest_file.seek(257, 0)
-            if dest_file.read(5) == 'ustar':
+            if dest_file.read(5) == b'ustar':
                 return 'tar'
     except:
         pass
