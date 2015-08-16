@@ -22,7 +22,7 @@ from zipfile import ZipFile
 from tarfile import TarFile
 from rarfile import RarFile
 
-is_posix = True
+is_posix = False
 
 def getpath(file):
     """\
