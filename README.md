@@ -14,4 +14,4 @@ And This program requires "rarfile". You can use this command to install this: <
 ## New Feature
 <strong>Add</strong>: Multi-file processing<br>
 <strong>Add</strong>: Extract files to their original paths<br>
-<strong>Fix<strong>: Some bugs
+<strong>Fix</strong>: Some bugs
