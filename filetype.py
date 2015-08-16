@@ -16,7 +16,8 @@ def filetype_detect(file):
     """
 
     
-    with open(file, 'rb') as dest_file:
+    try:
+        with open(file, 'rb') as dest_file:
         header = [ x for x in list( dest_file.read(7)) ]
 
         for filetype in file_types:
@@ -27,5 +28,7 @@ def filetype_detect(file):
         dest_file.seek(257, 0)
         if dest_file.read(5) == 'ustar':
             return 'tar'
-
-        return None
+    except:
+        pass
+    
+    return None
