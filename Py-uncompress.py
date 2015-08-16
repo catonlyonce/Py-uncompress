@@ -16,7 +16,7 @@
 import sys
 
 if sys.version_info.major < 3:
-    print('Please use Python 3(at least) to run')
+    print('Please use Python 3(at least) to run the program.')
     sys.exit(1)
 
 import os
