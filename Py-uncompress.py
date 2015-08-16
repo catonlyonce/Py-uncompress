@@ -57,7 +57,7 @@ for file in files:
     if os.path.isfile(file) == False:
         print('Error: No such file or it is a directory.')
         if return_value != 0:
-            return_value += 4
+            return_value = 6
         else:
             return_value = 4
 
@@ -66,7 +66,7 @@ for file in files:
     except:
         print('Error: The type of the file '+file+' doesn\'t supported.')
         if return_value != 0:
-            return_value += 5
+            return_value = 6
         else:
             return_value = 5
 
