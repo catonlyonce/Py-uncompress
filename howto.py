@@ -30,7 +30,7 @@ Options:
  
  --help                     show this message
  --version                  show the version
- -f [file]                  seclect the file to uncompress
+ -f [file1 file2...]        seclect the file(s) to uncompress
 
 
 Please report bugs to <https://www.github.com/Guanrenfu/Py-uncompress>
