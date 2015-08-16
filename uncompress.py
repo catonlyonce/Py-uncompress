@@ -22,28 +22,28 @@ from zipfile import ZipFile
 from tarfile import TarFile
 from rarfile import RarFile
 
-def zip():
+def zip(file):
     f = ZipFile(file)
     f.extractall()
     f.close
     
-def rar():
+def rar(file):
     f = RarFile(file)
     f.extractall()
     f.close
 
-def tar():
+def tar(file):
     f = TarFile(file)
     f.extractall()
     f.close
 
-def bzip():
+def bzip(file):
     zip_file = open(file, 'rb')
     plain_file = bz2.open(finish, 'wb')
 
     zip_file.writelines(plain_file)
 
-def gzip():
+def gzip(file):
     zip_file = open(file, 'rb')
     plain_file = gzip.open(finish, 'wb')
 

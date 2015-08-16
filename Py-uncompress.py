@@ -16,6 +16,7 @@
 import os
 import sys
 import howto
+import filetype
 import uncompress
 
         
@@ -40,29 +41,22 @@ except ValueError:
     sys.exit(1)
 
 
-uncompress.file = sys.argv[select + 1]
-if os.path.isfile(uncompress.file) == False:
+file = sys.argv[select + 1]
+
+if os.path.isfile(file) == False:
     print('Error: No such file or it is a directory.')
     sys.exit(1)
 
 
-try:
-    uncompress.zip()
-except Exception:
-
-    try:
-        uncompress.rar()
-    except Exception:
-
-        try:
-            uncompress.tar()
-        except Exception:
-
-            try:
-                uncompress.gzip()
-            except Exception:
-
-                try:
-                    uncompress.bzip()
-                except Exception:
-                    print('Error: This type doesn\'t supported.')
+if filetype.filetype_detect(file) == 'tar':
+    uncompress.tar(file)
+elif filetype.filetype_detect(file) == 'rar':
+    uncompress.rar(file)
+elif filetype.filetype_detect(file) == 'zip':
+    uncompress.zip(file)
+elif filetype.filetype_detect(file) == 'gzip':
+    uncompress.gzip(file)
+elif filetype.filetype_detect(file) == 'bzip':
+    uncompress.bzip(file)
+else:
+    print('Error: This type doesn\'t supported.')
