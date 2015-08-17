@@ -27,7 +27,8 @@ Type: rar, tar, zip, bzip2, gzip
 
 
 Options:
- 
+
+ -c [character_set]         change program's character set(Default is UTF-8)
  --help                     show this message
  --version                  show the version
  -f [file1 file2...]        seclect the file(s) to uncompress
