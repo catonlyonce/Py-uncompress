@@ -42,7 +42,7 @@ def zip_with_coding(zf_file):
     name_list = zf_file.namelist()
     dir_set = set()
     
-    name_tran_list = [ item.decode(change_coding).encode('utf-8') for item in name_list ]
+    name_tran_list = [ item.encode(change_coding).decode('utf-8') for item in name_list ]
     for name_temp in name_tran_list:
         dir_set.add( os.path.dirname(name_temp) )
     
