@@ -16,7 +16,7 @@ To get more up-to-date information, you can use the command: *Py-uncompress.py -
 ## New Features
 **Add**: Multi-file processing<br>
 **Add**: Extract files to their original paths<br>
-**Add**: Try to solve character set problem (**support is experimental, and zip file is not supposed**)<br>
+**Add**: Try to solve character set problem (**support is experimental, and zip file is not supported**)<br>
 **Fix**: Some bugs<br>
 <br>
 ## Value of process's exit status
