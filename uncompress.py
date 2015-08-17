@@ -23,6 +23,7 @@ from tarfile import TarFile
 from rarfile import RarFile
 
 is_posix = False
+change_coding = 'utf-8'
 
 def getpath(file):
     """\
@@ -36,19 +37,44 @@ def getpath(file):
         return '/'.join( name_list[ :len(name_list)-1] )
     else:
         return '.'
+
+def zip_with_coding(zf_file):
+    name_list = zf_file.namelist()
+    dir_set = set()
+    
+    name_tran_list = [ item.decode(change_coding).encode('utf-8') for item in name_list ]
+    for name_temp in name_tran_list:
+        dir_set.add( os.path.dirname(name_temp) )
+    
+    for dirname in dir_set:
+        try:
+            os.makedirs(dirname)
+        except:
+            pass
+        
+    for number in list( range(len(name_list)) ):
+        content = zf_file.read( name_list[number] )
+        try:
+            with open( name_tran_list[number], 'wb' ) as f:
+                f.write(content)
+        except:
+            pass
     
 def zip(file):
     f = ZipFile(file)
-    f.extractall(path = getpath(file))
-    f.close()
+    if change_coding == 'utf-8':
+        f.extractall(path = getpath(file))
+        f.close()
+    else:
+        zip_with_coding(f)
     
 def rar(file):
-    f = RarFile(file)
+    f = RarFile(file, charset = change_coding)
     f.extractall(path = getpath(file))
     f.close()
 
 def tar(file):
-    f = TarFile(file)
+    f = TarFile(file, encoding = change_coding)
     f.extractall(path = getpath(file))
     f.close()
 
