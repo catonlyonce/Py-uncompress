@@ -46,6 +46,12 @@ try:
 except ValueError:
     print('Error: Missing -f options')
     sys.exit(3)
+    
+try:
+    cd_pos = sys.argv.index('-c')
+    uncompress.change_coding = sys.argv[cd_pos + 1]
+except:
+    pass
 
 
 files = sys.argv[select + 1: ]
