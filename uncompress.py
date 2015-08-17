@@ -22,21 +22,19 @@ from zipfile import ZipFile
 from tarfile import TarFile
 from rarfile import RarFile
 
-is_posix = False
 change_coding = 'utf-8'
 
 def getpath(file):
     """\
-    Get file's path, if the platform is not POSIX-compliant then return current working directory's path
+    Get file's path, if failed it will return current working directory's path
     
     file: the name of the file which needs to process
     """
-    
-    if is_posix:
-        name_list = file.split('/')
-        return '/'.join( name_list[ :len(name_list)-1] )
-    else:
+    try:
+        return os.path.dirname(file)
+    except:
         return '.'
+    
 
 def zip_with_coding(zf_file):
     name_list = zf_file.namelist()
@@ -62,7 +60,7 @@ def zip_with_coding(zf_file):
     
 def zip(file):
     f = ZipFile(file)
-    if change_coding == 'utf-8':
+    if True:
         f.extractall(path = getpath(file))
         f.close()
     else:
