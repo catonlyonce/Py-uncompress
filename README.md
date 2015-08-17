@@ -9,13 +9,14 @@ A program that can uncompress files use Python3<br>
 Because this is a Python3 Program, so first you need to install Python3.<br>
 <br>
 ## Basic Usage
-**Extract file(s)**: Py-uncompress.py -f file1 file2 ...<br>
+**Extract file(s)**: Py-uncompress.py -c [character set] -f [file1 file2 ...]<br>
 <br>
 To get more up-to-date information, you can use the command: *Py-uncompress.py --help*
 <br>
 ## New Features
 **Add**: Multi-file processing<br>
 **Add**: Extract files to their original paths(ONLY works on *POSIX-compliant* platform)<br>
+**Add**: Try to solve character set problem (**support is experimental**)<br>
 **Fix**: Some bugs<br>
 <br>
 ## Value of process's exit status
